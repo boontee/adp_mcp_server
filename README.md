@@ -77,15 +77,15 @@ sequenceDiagram
 ## Prerequisites
 
 - **Node.js**: `v18.x` or higher (`v20+` recommended)
-- **IBM Cloud Pak for Business Automation (CP4BA)** or **Cloud Pak for Data (CP4D)** instance with Automation Document Processing deployed.
+- **IBM Cloud Pak for Business Automation (CP4BA)** instance with Automation Document Processing (ADP) deployed.
 - **Project ID**: The UUID of your configured Document Processing project.
-- **CP4D / Zen User Credentials**: A valid username and API key with project access.
+- **CP4BA User Credentials**: A valid username and API key with project access.
 
 ---
 
 ## Authentication & Credentials
 
-ADP uses Cloud Pak for Data's **ZenApiKey** authentication scheme. The header must be formatted as:
+ADP uses the Cloud Pak for Business Automation (CP4BA) platform **ZenApiKey** authentication scheme. The header must be formatted as:
 
 ```http
 Authorization: ZenApiKey <BASE64_ENCODED_USER_AND_API_KEY>
@@ -93,15 +93,15 @@ Authorization: ZenApiKey <BASE64_ENCODED_USER_AND_API_KEY>
 
 ### Generating the `ZenApiKey`
 
-1. Log in to the Cloud Pak for Data / CP4BA web console.
+1. Log in to the **CP4BA (Cloud Pak for Business Automation)** web console.
 2. Navigate to your profile (top right) $\rightarrow$ **Profile and settings** $\rightarrow$ **API key** $\rightarrow$ **Generate new key**.
 3. Base64-encode your username and the generated API key:
 
 ```bash
-echo -n "<your_cp4d_username>:<your_api_key>" | base64
+echo -n "<your_cp4ba_username>:<your_api_key>" | base64
 ```
 
-> **Important**: Use your actual CP4D username (e.g., `cpadmin`, `cpmanager`, or email), **not** the literal word `apikey`.
+> **Important**: Use your actual CP4BA username (e.g., `cpadmin`, `cpmanager`, or email), **not** the literal word `apikey`.
 
 ---
 
@@ -125,7 +125,7 @@ This compiles the server into `adp-mcp-server/build/index.js` and sets executabl
 
 | Variable | Required | Description | Example |
 | :--- | :---: | :--- | :--- |
-| `ADP_BASE_URL` | **Yes** | Base URL of the CP4BA / CP4D instance | `https://cpd-cp4ba.apps.example.com` |
+| `ADP_BASE_URL` | **Yes** | Base URL of the CP4BA instance | `https://cpd-cp4ba.apps.example.com` |
 | `ADP_PROJECT_ID` | **Yes** | Target ADP Project UUID | `36e69b97-ee21-42e8-ae4b-915dbc92fe00` |
 | `ADP_ZEN_API_KEY` | **Yes** | Full `ZenApiKey <token>` or base64 token | `ZenApiKey Y3BtYW5hZ2VyOkJLbm...` |
 
