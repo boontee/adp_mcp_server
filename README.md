@@ -4,6 +4,8 @@ A Model Context Protocol (MCP) server that connects AI assistants (such as Bob a
 
 This server enables AI models to discover project ontologies, upload/submit documents for optical character recognition (OCR) and classification, monitor extraction status, and retrieve structured Key-Value Pairs (KVPs), tables, and annotated PDFs.
 
+![IBM Cloud Pak ADP Dashboard](image.png)
+
 ---
 
 ## Table of Contents
