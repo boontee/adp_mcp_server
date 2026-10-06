@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "adp-mcp-server": {
+      "command": "node",
+      "args": [
+        "/Users/tanbt/Documents/workspaces/adp_mcp_server/adp-mcp-server/build/index.js"
+      ],
+      "env": {
+        "ADP_BASE_URL": "https://cpd-cp4ba.apps.itz-2tztyr.infra01-lb.tok04.techzone.ibm.com",
+        "ADP_PROJECT_ID": "36e69b97-ee21-42e8-ae4b-915dbc92fe00",
+        "ADP_ZEN_API_KEY": "${env:ADP_ZEN_API_KEY}"
+      },
+      "alwaysAllow": [
+        "adp_list_analyzers",
+        "adp_list_documents",
+        "adp_get_document_status",
+        "adp_get_document_results",
+        "adp_get_ontology"
+      ]
+    }
+  }
+}

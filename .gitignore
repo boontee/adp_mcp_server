@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+adp-mcp-server/node_modules/
+
+# Environment and sensitive files
+.env
+*.env
+.env.local
+
+# macOS files
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
